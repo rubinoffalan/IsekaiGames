@@ -8,9 +8,10 @@
         </style>
     </head>
     <body>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+        <script src="https://rawcdn.githack.com/imaya/zlib.js/master/bin/inflate.min.js"></script>
         <script src="https://rawcdn.githack.com/mrdoob/three.js/r110/examples/js/loaders/FBXLoader.js"></script>
-        <script>
+          <script>
             var scene, camera, renderer, loader, model;
 
             // Crear la escena, la cámara y el renderizador
@@ -30,7 +31,7 @@
 
             // Cargar el modelo FBX
             loader = new THREE.FBXLoader();
-            loader.load('SpikeMushroom.fbx', function (obj) {
+            loader.load('mymodel.fbx', function (obj) {
                 model = obj;
                 scene.add(model);
             });
