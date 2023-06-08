@@ -31,10 +31,16 @@
 
             // Cargar el modelo FBX
             loader = new THREE.FBXLoader();
-            loader.load('SpikeMushroom.fbx', function (obj) {
-                model = obj;
-                scene.add(model);
-            });
+           loader.load('SpikeMushroom.fbx', function (obj) {
+    obj.traverse(function (child) {
+        if (child.isMesh) {
+            child.material = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Cambiar el color según sea necesario
+        }
+    });
+
+    model = obj;
+    scene.add(model);
+});
 
             // Función de animación
             function animate() {
